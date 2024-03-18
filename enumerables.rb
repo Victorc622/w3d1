@@ -36,4 +36,28 @@ class Array
     end
     true
   end
+
+  def my_flatten
+    result = []
+    self.each do |ele|
+      if ele.is_a?(Array)
+        result += ele.my_flatten
+      else
+        result << ele
+      end
+    end
+   result
+   end
+
+   def my_zip(*args)
+    result = []
+    self.each_with_index do |ele, idx|
+      temp = [ele]
+      args.each do |arg|
+        temp << (index < arg.length ? arg[index] : nil)
+      end
+      result << temp
+    end
+    result
+   end
 end
