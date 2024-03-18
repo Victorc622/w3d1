@@ -60,4 +60,34 @@ class Array
     end
     result
    end
+
+   def my_rotate(shift = 1)
+    length = self.length
+    shift %= length
+
+    if shift >= 0
+      self.drop(shift) + self.take(shift)
+    else
+      self.drop(length + shift) + self.take(length + shift)
+    end
+   end
+
+   def my_join(separator = '')
+    result = ''
+    self.each_with_index do |ele, idx|
+      result << separator unless index.zero?
+      result << ele.to_s
+    end
+    result
+   end
+
+   def my_reverse
+    reversed = []
+    index = self.length - 1
+    while index >= 0
+      reversed << self[index]
+    index -= 1
+    end
+    reversed
+  end 
 end
