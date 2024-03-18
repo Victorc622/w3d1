@@ -6,7 +6,7 @@ class Array
         index += 1
     end
     self
-  end
+   end
 
   def my_select(&prc)
     selected = []
@@ -15,4 +15,12 @@ class Array
     end
     selected
    end
+   
+  def my_reject(&prc)
+    rejected = []
+    self.my_each do |ele|
+      rejected << ele unless prc.call(ele)
+    end
+    rejected
+  end
 end
