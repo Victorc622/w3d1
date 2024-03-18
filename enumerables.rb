@@ -51,7 +51,7 @@ class Array
 
    def my_zip(*args)
     result = []
-    self.each_with_index do |ele, idx|
+    self.each_with_index do |ele, index|
       temp = [ele]
       args.each do |arg|
         temp << (index < arg.length ? arg[index] : nil)
