@@ -23,4 +23,14 @@ class Array
     end
     rejected
   end
+
+  def my_any?(&prc)
+    self.my_each do |ele|
+      return true if prc.call(ele)
+    end
+    false
+  end
+  def my_all?(&prc)
+    
+  end
 end
